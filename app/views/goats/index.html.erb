@@ -4,17 +4,19 @@
       <% @goats.each do |goat| %>
   <div class="col">
     <div class="card h-100" style="max-width: 20rem;">
-        <%= image_tag "logo.png", class: "card-img-top p-2" %>
+        <%= cl_image_tag("goat_d2m3nl", width: 400, crop: :fill, class: "card-img-top") %>
       <div class="card-body">
         <h5 class="card-title"><%= goat.name %></h5>
         <p class="card-text"><%= goat.description %></p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item"><%= goat.category %></li>
+        <li class="list-group-item">
+          <span class="badge text-bg-info"><%= goat.category %> Goat</span>
+        </li>
       </ul>
       <div class="card-body">
-          <%= link_to goat_path(goat.id), class: "card-link btn btn-primary", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-            <i class="fa-regular fa-trash-can"></i>
+          <%= link_to goat_path(goat.id), class: "card-link btn btn-primary position-relative", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+            Book <%= goat.name %> <i class="fa-solid fa-cart-plus"></i>
           <% end %>
       </div>
     </div>

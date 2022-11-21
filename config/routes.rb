@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  root "goats#index"
+  root "pages#home"
+  resources :goats, only: %i[index show]
 end

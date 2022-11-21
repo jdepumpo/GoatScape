@@ -1,1 +1,24 @@
-<p>index</p>
+<div class="container">
+<h1>Goat List</h1>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+      <% @goats.each do |goat| %>
+  <div class="col">
+    <div class="card h-100" style="max-width: 20rem;">
+        <%= image_tag goat.image_url, class: "card-img-top" %>
+      <div class="card-body">
+        <h5 class="card-title"><%= goat.name %></h5>
+        <p class="card-text"><%= goat.description %></p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><%= goat.category %></li>
+      </ul>
+      <div class="card-body">
+          <%= link_to goat_path(goat.id), class: "card-link btn btn-primary", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+            <i class="fa-regular fa-trash-can"></i>
+          <% end %>
+      </div>
+    </div>
+  </div>
+        <% end %>
+</div>
+</div>

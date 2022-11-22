@@ -46,11 +46,6 @@
 
 
 
-
-
-
-
-
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -58,11 +53,6 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -73,8 +63,10 @@
             </div>
           </li>
         <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+      <div class="button-div">
+          <li class="nav-item btn btn-primary" id="login-button" style="border-radius:50px; box-shadow: 0 1px 2px rgb(0 0 0 / 8%);">
+          <a class="nav-link" style="color:white" href="/users/sign_in">Login</a>
+      </div>
           </li>
         <% end %>
       </ul>

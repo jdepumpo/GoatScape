@@ -1,26 +1,25 @@
 <div class="container">
-<h1>Goat List</h1>
-<div class="row row-cols-1 row-cols-md-3 g-4">
-      <% @goats.each do |goat| %>
-  <div class="col">
-    <div class="card h-100" style="max-width: 20rem;">
-        <%= cl_image_tag(goat.image_url, width: 400, crop: :fill, class: "card-img-top") %>
-      <div class="card-body">
-        <h5 class="card-title"><%= goat.name %></h5>
-        <p class="card-text"><%= goat.description %></p>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-          <span class="badge text-bg-info"><%= goat.category %> Goat</span>
-        </li>
-      </ul>
-      <div class="card-body">
-          <%= link_to goat_path(goat.id), class: "card-link btn btn-primary position-relative", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-            Book <%= goat.name %> <i class="fa-solid fa-cart-plus"></i>
-          <% end %>
-      </div>
-    </div>
-  </div>
+  <h1>Goat List</h1>
+
+  <div class="cards">
+    <% @goats.each do |goat| %>
+      <div class="card">
+        <%= link_to goat_path(goat.id), class: "position-relative" do %>
+          <%= cl_image_tag(goat.image_url, class: "card-img-top") %>
+          <div>
+            <i class="fa-solid fa-star star-icon"></i>
+          </div>
         <% end %>
-</div>
+
+        <div class="card-body">
+          <h5 class="card-title"><%= goat.name %></h5>
+          <span class="badge text-bg-info"><%= goat.category %></span>
+          <%# <p class="card-text"><%= goat.description </p> %>
+          <%= link_to goat_path(goat.id) do %>
+            <i class="fa-solid fa-cart-plus"></i>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

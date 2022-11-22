@@ -4,8 +4,8 @@
 <% @goats.each do |goat| %>
   <div class="col">
     <div class="card h-100" style="max-width: 20rem;">
-      <%= button_to goat_path(goat.id) do %>
-        <%= cl_image_tag(goat.image_url, width: 400, crop: :fill, class: "card-img-top") %>
+      <%= link_to goat_path(goat.id) do %>
+        <%= cl_image_tag(goat.image_url, width: 400, height: 400, crop: :fill, class: "card-img-top") %>
       <% end %>
       <div class="card-body">
         <h5 class="card-title"><%= goat.name %></h5>

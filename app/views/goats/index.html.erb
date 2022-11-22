@@ -1,19 +1,22 @@
 <div class="container">
   <h1>Goat List</h1>
 
-  <div class="cards">
+  <div class="cards mb-10px">
     <% @goats.each do |goat| %>
       <div class="card">
         <%= link_to goat_path(goat.id), class: "position-relative" do %>
           <%= cl_image_tag(goat.image_url, class: "card-img-top") %>
-          <div>
-            <i class="fa-solid fa-star star-icon"></i>
-          </div>
+          <p class="star-icon m-0 px-2 mb-0">
+          <i class="fa-solid fa-star star"></i> <%= goat.rating %>
+          </p>
         <% end %>
 
         <div class="card-body">
-          <h5 class="card-title"><%= goat.name %></h5>
-          <span class="badge text-bg-info"><%= goat.category %></span>
+          <div>
+            <h5 class="card-title mb-0"><%= goat.name %></h5>
+            <p><%= goat.price_per_day %></p>
+          </div>
+          <span><%= goat.category %></span>
           <%# <p class="card-text"><%= goat.description </p> %>
           <%= link_to goat_path(goat.id) do %>
             <i class="fa-solid fa-cart-plus"></i>

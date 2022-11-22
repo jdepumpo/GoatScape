@@ -36,7 +36,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_22_143207) do
     t.integer "transport_fee"
     t.integer "cleaning_fee"
     t.integer "price_per_day"
-    t.integer "rating"
+    t.float "rating"
     t.index ["user_id"], name: "index_goats_on_user_id"
   end
 

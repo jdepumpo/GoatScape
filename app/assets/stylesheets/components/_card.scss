@@ -1,0 +1,23 @@
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.card {
+  width: 15rem;
+  background: none;
+  border: none;
+}
+.card-img-top{
+  object-fit: cover;
+  object-position: center;
+  height: 15rem;
+  border-radius: 12px;
+}
+
+.star-icon {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  
+}

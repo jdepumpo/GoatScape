@@ -1,0 +1,11 @@
+<h1>Add a new goat</h1>
+
+<%= simple_form_for [@goat] do |f| %>
+      <%= f.input :name %>
+      <%= f.input :location %>
+      <%= f.input :description %>
+      <%= f.input :age %>
+      <%= f.input :user_id %>
+
+      <%= f.submit "Add this Goat", class: "btn btn-primary" %>
+    <% end %>

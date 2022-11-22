@@ -1,0 +1,116 @@
+  <%= link_to "<< Back to goats", goats_path, class: "btn btn-small" %>
+  <div class="p-4 p-md-5 mb-4 rounded text-bg-dark flex">
+  <div class="row g-5 justify-content-center">
+    <div class="col-12 col-lg-8 px-4">
+      <h1 class="display-4 fst-italic"><%= @goat.name %></h1>
+      <p class="lead my-3"><%= @goat.description %></p>
+      </div>
+         <div class="col-12 col-lg-4 order-first order-lg-last">
+          <%= cl_image_tag(@goat.image_url, width: 250, crop: :fill) %>
+        </div>
+    </div>
+    </div>
+
+  <div class="row g-5">
+    <div class="col-md-8">
+      <div class="row mb-4">
+        <div class="col-12">
+          <div class="card rounded border w-100">
+            <div class="card-body">
+              <h5 class="card-title">Rating:
+                <% @goat.rating.times do %>
+                  <i class="fa-solid fa-star"></i>
+                <% end %>
+                <% (5 - @goat.rating).times do %>
+                  <i class="fa-regular fa-star"></i>
+                <% end %>
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-4">
+        <div class="col-sm-6">
+          <div class="card rounded border w-100 h-100">
+            <div class="card-body text-center">
+            <i class="fa-regular fa-face-grin-tongue-squint fs-2 text-primary mb-2"></i>
+              <h5 class="card-title">Anti-Spit Training</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card rounded border w-100  h-100">
+            <div class="card-body text-center">
+            <i class="fa-solid fa-car-burst fs-2 text-primary mb-2"></i>
+              <h5 class="card-title">Comprehensive insurance coverage</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-sm-6">
+          <div class="card rounded border w-100 h-100">
+            <div class="card-body text-center">
+            <i class="fa-solid fa-earth-europe fs-2 text-primary mb-2"></i>
+              <h5 class="card-title">Bio-Green Certified</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card rounded border w-100  h-100">
+            <div class="card-body text-center">
+            <i class="fa-solid fa-utensils fs-2 text-primary mb-2"></i>
+              <h5 class="card-title">1 Acre/hour</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <article class="blog-post">
+        <h2 class="blog-post-title mb-1">New feature</h2>
+        <p class="blog-post-meta">December 14, 2020 by <a href="#">Chris</a></p>
+
+        <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
+        <ul>
+          <li>First list item</li>
+          <li>Second list item with a longer description</li>
+          <li>Third list item to close it out</li>
+        </ul>
+        <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout.</p>
+      </article>
+      </div>
+
+    <div class="col-md-4">
+      <div class="position-sticky" style="top: 2rem;">
+        <div class="card mb-4 rounded-3 shadow w-100">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Pricing</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">€<%= @goat.price_per_day %><small class="text-muted fw-light">/day</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>€<%= @goat.transport_fee %> <small class="text-muted fw-light">transport fee</small></li>
+              <li>€<%= @goat.cleaning_fee %> <small class="text-muted fw-light">cleaning fee</small></li>
+              <hr />
+              <%total = @goat.price_per_day + @goat.cleaning_fee + @goat.cleaning_fee %>
+              <li><strong>Total:</strong> €<%= total %></li>
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Book <%= @goat.name %></button>
+          </div>
+        </div>
+
+      <div class="p-4 mb-3 rounded border position-relative">
+      This is a rare find! <strong><%= @goat.name %> is usually booked!</strong>
+        <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-danger hot-goat">
+          HOT GOAT!
+          <span class="visually-hidden">This goat is usually booked</span>
+        </span>
+      </div>
+      </div>
+    </div>
+  </div>

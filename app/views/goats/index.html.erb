@@ -4,7 +4,7 @@
       <% @goats.each do |goat| %>
   <div class="col">
     <div class="card h-100" style="max-width: 20rem;">
-        <%= cl_image_tag("goat_d2m3nl", width: 400, crop: :fill, class: "card-img-top") %>
+        <%= cl_image_tag(goat.image_url, width: 400, crop: :fill, class: "card-img-top") %>
       <div class="card-body">
         <h5 class="card-title"><%= goat.name %></h5>
         <p class="card-text"><%= goat.description %></p>

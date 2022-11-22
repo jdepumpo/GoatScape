@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require "faker"
 
-# User.create(email: "gerardo.wemans@gmail.com", encrypted_password: "123456")
+User.create(email: "gerardo.wemans@gmail.com", password: "123456", password_confirmation: "123456")
 Goat.destroy_all
 cat = ["Yoga Goat", "Grazing Goat", "Company Goat", "Birthday Goat", "Decoration Goat", "Seeing Goat", "Guardian Goat", "Entertaining Goat"]
 10.times do |i|

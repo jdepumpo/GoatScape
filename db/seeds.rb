@@ -22,7 +22,7 @@ lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque conval
     description: lorem,
     price_per_day: rand(27..114),
     transport_fee: rand(12..87),
-    cleaning_fee: rand(8.39),
+    cleaning_fee: rand(8..39),
     rating: rand(1..5)
   })
   puts "goat #{i} created"

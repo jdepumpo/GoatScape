@@ -1,8 +1,12 @@
 class GoatsController < ApplicationController
   def index
-    @goats = Goat.all
+    if params[:category]
+      @goats = Goat.where(category: params[:category])
+    else
+      @goats = Goat.all
+    end
   end
-  
+
   def show
     @goat = Goat.find(params[:id])
   end

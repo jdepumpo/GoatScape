@@ -32,3 +32,32 @@
 .star{
   color: #FFC978;
 }
+ .price{
+  right: 15px;
+  margin-bottom: 0;
+  display: flex;
+  position: absolute;
+ }
+
+ .goat-category{
+  color: rgb(123, 120, 120);
+ }
+
+
+ .filter-image{
+  width: 17px;
+  //margin-bottom: 20px;
+  margin: 10px;
+ }
+
+
+ .filter-categories {
+  display: flex;
+  border: solid;
+  width: 100px;
+  border-radius: 8px;
+  flex-direction: inherit;
+  justify-content: space-around;
+  height: 100%;
+  margin-bottom: 20px;
+ }

@@ -1,5 +1,11 @@
 <div class="container">
-  <h1>Goat List</h1>
+  <h1 class="index-h1">Goat List</h1>
+
+  <div class="filter-categories">
+    <%= image_tag "filter.png", class: "filter-image" %>
+   <p class="mt-1">
+   Filters</p>
+  </div>
 
   <div class="cards mb-10px">
     <% @goats.each do |goat| %>
@@ -12,11 +18,11 @@
         <% end %>
 
         <div class="card-body">
-          <div>
+          <div class="d-flex">
             <h5 class="card-title mb-0"><%= goat.name %></h5>
-            <p><%= goat.price_per_day %></p>
+            <p class="price"><%= goat.price_per_day %>€/h</p>
           </div>
-          <span><%= goat.category %></span>
+          <span class="goat-category"><%= goat.category %></span>
           <%# <p class="card-text"><%= goat.description </p> %>
           <%= link_to goat_path(goat.id) do %>
             <i class="fa-solid fa-cart-plus"></i>

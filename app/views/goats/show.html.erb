@@ -1,12 +1,11 @@
   <div class="p-4 p-md-5 mb-4 rounded text-bg-dark flex">
-  <div class="row">
-    <div class="col-6 px-0">
+  <div class="row g-5 justify-content-center">
+    <div class="col-12 col-lg-8 px-4">
       <h1 class="display-4 fst-italic"><%= @goat.name %></h1>
       <p class="lead my-3"><%= @goat.description %></p>
       </div>
-         <div class="col-6 d-lg-block">
-          <svg class="bd-placeholder-img" width="250" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">        <%= cl_image_tag(@goat.image_url, width: 250, crop: :fill) %>
-</svg>
+         <div class="col-12 col-lg-4 order-first order-lg-last">
+          <%= cl_image_tag(@goat.image_url, width: 250, crop: :fill) %>
         </div>
     </div>
     </div>
@@ -140,10 +139,13 @@
             <h4 class="my-0 fw-normal">Pricing</h4>
           </div>
           <div class="card-body">
-            <h1 class="card-title pricing-card-title">$<%= @goat.price_per_day %><small class="text-muted fw-light">/day</small></h1>
+            <h1 class="card-title pricing-card-title">€<%= @goat.price_per_day %><small class="text-muted fw-light">/day</small></h1>
             <ul class="list-unstyled mt-3 mb-4">
-              <li>$<%= @goat.transport_fee %> <small class="text-muted fw-light">transport fee</small></li>
-              <li>$<%= @goat.cleaning_fee %> <small class="text-muted fw-light">cleaning fee</small></li>
+              <li>€<%= @goat.transport_fee %> <small class="text-muted fw-light">transport fee</small></li>
+              <li>€<%= @goat.cleaning_fee %> <small class="text-muted fw-light">cleaning fee</small></li>
+              <hr />
+              <%total = @goat.price_per_day + @goat.cleaning_fee + @goat.cleaning_fee %>
+              <li><strong>Total:</strong> €<%= total %></li>
             </ul>
             <button type="button" class="w-100 btn btn-lg btn-outline-primary">Book <%= @goat.name %></button>
           </div>

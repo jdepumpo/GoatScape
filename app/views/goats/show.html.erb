@@ -134,15 +134,28 @@
 
       </div>
 
-          <div class="col-md-4">
+    <div class="col-md-4">
       <div class="position-sticky" style="top: 2rem;">
-        <div class="p-4 mb-3 bg-light rounded">
-          <h4 class="fst-italic">Checkout</h4>
-          <p class="mb-0">Customize this section to tell your visitors a little bit about your publication, writers, content, or something else entirely. Totally up to you.</p>
-      </div>
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Pricing</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">$<%= @goat.price_per_day %><small class="text-muted fw-light">/day</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>$<%= @goat.transport_fee %> <small class="text-muted fw-light">transport fee</small></li>
+              <li>$<%= @goat.cleaning_fee %> <small class="text-muted fw-light">cleaning fee</small></li>
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Book <%= @goat.name %></button>
+          </div>
+        </div>
 
-      <div class="p-4 mb-3 rounded border">
-      This is a rare find! Jimmy is usually booked!
+      <div class="p-4 mb-3 rounded border position-relative">
+      This is a rare find! <%= @goat.name %> is usually booked!
+        <span class="position-absolute top-0 start-0 translate-middle badge rounded-pill bg-danger">
+          HOT GOAT!
+          <span class="visually-hidden">This goat is usually booked</span>
+        </span>
       </div>
       </div>
     </div>

@@ -1,6 +1,5 @@
 .hot-goat {
   animation: bounceAnimation 2s ease 0s infinite normal none;
-}
 
 @keyframes bounceAnimation {
   0% {
@@ -19,4 +18,5 @@
     animation-timing-function: ease-out;transform: scale(1);
   }
 
+}
 }

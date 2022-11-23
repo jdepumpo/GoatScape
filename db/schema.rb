@@ -35,7 +35,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_23_115026) do
     t.integer "transport_fee"
     t.integer "cleaning_fee"
     t.integer "price_per_day"
-    t.float "rating"
+    t.integer "rating"
     t.text "address"
     t.float "latitude"
     t.float "longitude"

@@ -1,9 +1,10 @@
 
   <%= link_to "<", goats_path, class: "returnbtn btn btn-primary" %>
-  <div class="p-4 p-md-5 mb-4 rounded text-bg-dark flex">
+  <div class="p-4 p-md-5 mb-4 rounded flex" style="background-color: #798e77; color:white; border-radius: 10px!important">
   <div class="row g-5 justify-content-center">
     <div class="banner_show col-12 col-lg-8 px-4">
       <h1 class=" display-4 fst-italic"><%= @goat.name %></h1>
+      <hr style="border: 2px solid; color: white;">
       <div class="d-flex justify-content-center align-items-center" style="height: 79%;">
         <p class="lead my-3"><%= @goat.description %></p>
       </div>

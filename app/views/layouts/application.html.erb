@@ -14,9 +14,14 @@
 
   <body>
     <%= render "shared/navbar"%>
-    <main class="container">
-    <%= yield %>
-    </main>
+      <% if params[:controller] == "pages" && params[:action] == "home" %>
+        <%= yield %>
+      <% else %>
+        <main class="container">
+          <%= yield %>
+        </main>
+      <% end %>
+
     <%= render "shared/footer" %>
   </body>
 </html>

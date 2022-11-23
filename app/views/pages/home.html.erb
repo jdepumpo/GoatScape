@@ -1,44 +1,38 @@
-<div class="banner d-flex justify-content-center align-items-center flex-column" style="height: 700px;">
-  <div class="list d-flex justify-content-center align-items-center flex-column">
-  <h1 class="goatTitle">Welcome to GoatScape</h1>
-  <h2 class="bannerSubtitle">Oh My Goat!</h2>
- <%= link_to "users/sign_in", class: "btn btn-primary btn-lg" do %>
-      Login
-    <% end %>
+<div class="jumbotron jumbotron-fluid">
+  <div class="banner d-flex justify-content-center align-items-center flex-column" style="height: 700px;">
+    <div class="list d-flex justify-content-center align-items-center flex-column">
+    <h2 class="goatTitle">Welcome to GoatScape</h2>
+    <h2 class="bannerSubtitle">Oh My Goat!</h2>
+      <%= link_to "users/sign_in", class: "btn btn-primary btn-lg btn-login" do %>
+        Login
+      <% end %>
+    </div>
   </div>
 </div>
-
 <div class="list d-flex justify-content-center align-items-center pt-5 pb-5">
   <h2 mb-50>We rent goats for any occasion</h2>
 </div>
-<div class="list d-flex justify-content-around align-items-center pb-5 m-2 rounded">
-  <div class="card rounded" style="width: 18rem;">
-    <img class="card-img-top" src="https://images.unsplash.com/photo-1602631985686-1bb0e6a8696e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmlydGhkYXklMjBwYXJ0eXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" alt="Card image cap">
-  <div class="card-body">
-    <p class="card-text">Birthday parties of all ages</p>
+<div class="list d-flex justify-content-around align-items-center pb-5">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1602631985686-1bb0e6a8696e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YmlydGhkYXklMjBwYXJ0eXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60)">
+    Birthdays
   </div>
-</div>
-  <div class="card rounded" style="width: 18rem;">
-    <img class="card-img-top" src="https://images.unsplash.com/photo-1603988363607-e1e4a66962c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHlvZ2F8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60" alt="Card image cap">
-  <div class="card-body">
-    <p class="card-text">Yoga retreats of all sizes</p>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1603988363607-e1e4a66962c6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHlvZ2F8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60)">
+    Yoga
   </div>
-</div>
-<div class="card rounded" style="width: 18rem;">
-  <img class="card-img-top" src="https://images.unsplash.com/photo-1533215740941-26df050d5278?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8Z3Jhc3MlMjBnb2F0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60" alt="Card image cap">
-  <div class="card-body">
-    <p class="card-text">Sustainably mowing your lawn</p>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1533215740941-26df050d5278?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8Z3Jhc3MlMjBnb2F0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60)">
+    Lawn Care
   </div>
-</div>
 </div>
 
-<div class="jumbotron jumbotron-fluid pb-5">
+<div class="jumbotron jumbotron-fluid pb-5 mt-5">
     <div class="list d-flex justify-content-center align-items-center pt-5 pb-5">
       <h2>See what our users have to say</h2>
       </div>
       <div class="container mb-10">
         <div class="list d-flex justify-content-around align-items-center mb-10">
-          <div class="card-home rounded p-3" style="width: 18rem;">
+          <div class="card-home p-3" style="width: 18rem;">
             <div class="card-body">
               <h5 class="card-title">Kady Heron</h5>
                 <p class="card-text"><i>"The goats were well-behaved and kind."</i></p>
@@ -48,7 +42,7 @@
     <%= link_to "#", class: "goat-icon" do %>
       <%= image_tag "goatIcon.png", width: 20 %>
     <% end %>
-  <div class="card-home rounded p-3" style="width: 18rem;">
+  <div class="card-home p-3" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">Janice Ian</h5>
       <p class="card-text"><i>"The best goat rental I've ever used!"</i></p>
@@ -57,7 +51,7 @@
       <%= link_to "#", class: "goat-icon" do %>
         <%= image_tag "goatIcon.png", width: 20 %>
       <% end %>
-  <div class="card-home rounded p-3" style="width: 18rem;">
+  <div class="card-home p-3" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">Gretchen Wieners</h5>
       <p class="card-text"><i>"I'll never practive goatless yoga again!"</i></p>

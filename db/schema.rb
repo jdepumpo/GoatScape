@@ -26,7 +26,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_23_115026) do
   create_table "goats", force: :cascade do |t|
     t.string "category"
     t.string "name"
-    t.string "location"
     t.text "description"
     t.integer "age"
     t.bigint "user_id", null: false
@@ -36,7 +35,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_23_115026) do
     t.integer "transport_fee"
     t.integer "cleaning_fee"
     t.integer "price_per_day"
-    t.integer "rating"
+    t.float "rating"
+    t.text "address"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["user_id"], name: "index_goats_on_user_id"
   end
 

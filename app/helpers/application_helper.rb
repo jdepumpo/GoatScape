@@ -1,6 +1,6 @@
 module ApplicationHelper
 
   def goat_categories
-    Goat.all.uniq.pluck(:category)
+    Goat.distinct(:category).pluck(:category)
   end
 end

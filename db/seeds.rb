@@ -16,7 +16,7 @@ cities = ["Águeda", "Albergaria-a-Velha", "Anadia", "Arouca", "Aveiro", "Castel
 20.times do |i|
   goat = Goat.create({
     name: Faker::Name.first_name,
-    category: cat[rand(0..7)],
+    category: cat.sample,
     age: rand(1..20), user_id: 1,
     image_url: urls.sample,
     description: lorem,

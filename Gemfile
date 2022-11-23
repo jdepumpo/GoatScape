@@ -80,3 +80,4 @@ gem "devise"
 gem "cloudinary"
 gem "faker"
 gem 'date_picker'
+gem "geocoder"

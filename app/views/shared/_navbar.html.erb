@@ -17,8 +17,7 @@
             <input placeholder="Select Dates" data-flatpickr-target="calendarInput" style="border: none; width: 114px;"><i class="fa-regular fa-calendar" style="color: #5d6e5b; font-size: 15px;"></i>
           </div class="d-flex">
           <li class="nav-item">
-            <input class="nav-link" href="#" placeholder="Where" style="border:none; outline: none;
-"></a>
+            <input class="nav-link" href="#" placeholder="Where" style="border:none; outline: none; width:80px"></a>
 
 
 
@@ -50,26 +49,20 @@
     </div>
   </nav>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "All Goats", goats_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-
-              <%= link_to current_user.email, "#should_got_to_profile_page", class: "dropdown-item" %>
-              <%= link_to "My Goats", "#should_go_to_user_goats_page", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-            </div>
-          </li>
-        <% else %>
+          <div class="dropdown dropstart">
+            <button id="login-button" class=" btn btn-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-bars" style="margin-right: 14px"></i> <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            </button>
+            <ul class="dropdown-menu">
+              <li class="menu_item" style="font-size:13px"><%= link_to current_user.email, "#should_got_to_profile_page", class: "dropdown-item" %></li>
+              <li class="menu_item" style="font-size:13px"><%= link_to "My Goats", "#should_go_to_user_goats_page", class: "dropdown-item" %></li>
+              <li class="menu_item" style="font-size:13px"><%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %></li>
+            </ul>
+          </div>
+       <% else %>
           <li>
             <button id="login-button" class="btn d-flex" type="submit" role="login" style="align-items:center">
               <div class="d-flex" style="align-items:center;">

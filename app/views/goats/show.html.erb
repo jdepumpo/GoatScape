@@ -18,10 +18,10 @@
           <div class="card rounded border w-100">
             <div class="card-body">
               <h5 class="card-title">Rating:
-                <% @goat.rating.times do %>
+                <% @goat.rating.round(0).times do %>
                   <i class="fa-solid fa-star"></i>
                 <% end %>
-                <% (5 - @goat.rating).times do %>
+                <% (5 - @goat.rating.round(0)).times do %>
                   <i class="fa-regular fa-star"></i>
                 <% end %>
               </h5>

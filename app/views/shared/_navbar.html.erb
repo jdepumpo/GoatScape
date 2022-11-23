@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon" style="height: 30px; background-color: #f8f5f2; padding: 46px;">
+<div class="navbar navbar-expand-sm fixed-top navbar-light navbar-lewagon" style="height: 30px; background-color: #f8f5f2; padding: 46px;">
   <div class="container-fluid" style="padding: 46px">
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "logo.png", width: 150 %>
@@ -63,12 +63,24 @@
             </div>
           </li>
         <% else %>
-      <div class="button-div">
+
+<li>
+
+          <button id="login-button" class="btn d-flex" type="submit" role="login" style="align-items:center">
+            <div class="d-flex" style="align-items:center;">
+             <i class="fa-solid fa-bars" style="margin-right: 14px"></i>
+            <a class="nav-link" style="color:white; padding:0" href="/users/sign_in"><i class="fa-solid fa-user" style="color:#8DA48A"></i></a>
+            <%#avatar image %>
+            </div>
+          </button>
+          </li>
+
+        <% end %>
+
+      <%# <div class="button-div">
           <li class="nav-item btn btn-primary" id="login-button" style="border-radius:50px; box-shadow: 0 1px 2px rgb(0 0 0 / 8%);">
           <a class="nav-link" style="color:white" href="/users/sign_in">Login</a>
-      </div>
-          </li>
-        <% end %>
+      </div> %>
       </ul>
     </div>
   </div>

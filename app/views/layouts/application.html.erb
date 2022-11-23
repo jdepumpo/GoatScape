@@ -19,7 +19,7 @@
       <% if params[:controller] == "pages" && params[:action] == "home" %>
         <%= yield %>
       <% else %>
-        <main class="container">
+        <main class="container" style="padding-top: 100px;">
           <%= yield %>
         </main>
       <% end %>

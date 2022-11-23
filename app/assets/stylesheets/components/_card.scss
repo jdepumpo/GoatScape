@@ -15,7 +15,7 @@
 
 }
 
-.card:hover{
+.animated_card:hover {
   transition: all .2s ease-in-out;
   transform: scale(1.1);
 }
@@ -96,4 +96,8 @@
  .filter-category:hover{
   background-color: #F9F9F9;
   color: black;
+}
+
+.avatar{
+  width: 30px;
 }

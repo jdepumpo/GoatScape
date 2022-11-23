@@ -1,12 +1,58 @@
 <div class="p-4 p-md-5 mb-4 rounded text-bg-dark flex">
   <div class="row g-5 justify-content-center">
     <div class="col-12 col-lg-8 px-4">
-      <h1 class="display-4 fst-italic"><%= current_user.first_name %> <%= current_user.last_name %></h1>
-      <p class="lead my-3"><%= current_user.bio %></p>
+      <h1 class="display-4 fst-italic"><%= @user.first_name %> <%= @user.last_name %></h1>
+      <p class="lead my-3"><%= @user.bio %></p>
     </div>
     <div class="col-12 col-lg-4 order-first order-lg-last">
       <img src="https://res.cloudinary.com/dxfg68ykv/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1669118271/thomas-jarrand-SClPUUkGD8M-unsplash_rv7urx.jpg" class="rounded-circle" style="width: 250px;"alt="profile_picture">
     </div>
   </div>
-
 </div>
+
+
+  <div class="row g-5">
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col-12">
+          <div class="card rounded-3 shadow w-100">
+            <div class="card-body p-0">
+              <div class="card-header py-3">
+                <h4 class="my-0 fw-normal">About your Goats</h4>
+              </div>
+              <h5 class="card-title p-3 m-0">
+                <strong>Your email:</strong>
+                <p><%= @user.email %></p>
+                <strong>Your address:</strong>
+                <p><%= @user.address %></p>
+                <strong>Your phone number:</strong>
+                <p><%= @user.phone_number %></p>
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-4">
+      <div class="position-sticky" style="top: 2rem;">
+        <div class="card mb-4 rounded-3 shadow w-100">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">About your Goats</h4>
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled mt-3 mb-4">
+              <% @user.goats.each do |goat| %>
+                <li><p class="fw-light"><%= goat.name %></p></li>
+              <% end %>
+              <hr />
+              <%total = @user.goats.count%>
+              <li><strong>You have:</strong> <%= total %> Goats</li>
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Add new Goat</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

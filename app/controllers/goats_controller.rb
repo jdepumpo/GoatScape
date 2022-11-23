@@ -9,6 +9,7 @@ class GoatsController < ApplicationController
 
   def show
     @goat = Goat.find(params[:id])
+    @markers = [{ lat: @goat.latitude, lng: @goat.longitude }]
   end
 
   def new

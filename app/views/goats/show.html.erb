@@ -6,8 +6,8 @@
         <h1 class="display-4 fst-italic"><%= @goat.name %></h1>
         <p class="lead my-3"><%= @goat.description %></p>
       </div>
-      <div class="col-12 col-lg-4 order-first order-lg-last">
-        <%= cl_image_tag(@goat.image_url, width: 250, crop: :fill) %>
+      <div class="col-12 col-lg-4 order-first order-lg-last d-flex justify-content-center align-items-center">
+        <div><%= cl_image_tag(@goat.image_url, width: 250, crop: :fill) %></div>
       </div>
     </div>
   </div>

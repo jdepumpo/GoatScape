@@ -17,17 +17,7 @@
             <input placeholder="Select Dates" data-flatpickr-target="calendarInput" style="border: none; width: 114px;"><i class="fa-regular fa-calendar" style="color: #5d6e5b; font-size: 15px;"></i>
           </div class="d-flex">
           <li class="nav-item">
-
-          <%
-=begin%>
- <%= simple_form_for @goats do |f| %>
-            <%= f.input :address,
-              input_html: {data: {address_autocomplete_target: "address"}},
-              wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
-            %>
-          <%= end %>
-<%
-=end%>
+            <input class="nav-link" href="#" placeholder="Where" style="border:none; outline: none; width:80px"></a>
 
           </li>
           <li class="nav-item dropdown">

@@ -120,7 +120,7 @@
               <%total = @goat.price_per_day + @goat.cleaning_fee + @goat.cleaning_fee %>
               <li><strong>Total:</strong> €<%= total %></li>
             </ul>
-            <%= link_to new_goat_booking_path(@goat), class: "w-100 btn btn-lg btn-outline-primary", style: "border-radius: 34px!important;" do %>
+            <%= link_to new_goat_booking_path(@goat, dates: params[:dates]), class: "w-100 btn btn-lg btn-outline-primary", style: "border-radius: 34px!important;" do %>
               Book <%= @goat.name %>
             <% end %>
           </div>

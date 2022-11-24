@@ -9,7 +9,9 @@
       </div>
     </div>
     <div class="col-12 col-lg-4 order-first order-lg-last d-flex justify-content-center align-items-center">
-      <%= cl_image_tag(@goat.image_url, class: "banner_img", width: 250, crop: :fill) %>
+      <div class="fill">
+        <%= cl_image_tag(@goat.image_url, height:333, width:368, crop:"fill") %>
+      </div>
     </div>
   </div>
 </div>

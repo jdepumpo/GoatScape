@@ -15,24 +15,22 @@ class GoatsController < ApplicationController
     @markers = [{ lat: @goat.latitude, lng: @goat.longitude, image_url: helpers.asset_url("goat.png") }]
   end
 
-  def new
-    @goat = Goat.new
-  end
-
   def create
+    @user = current_user
     @goat = Goat.new(goat_params)
     @goat.user = @user
+    # raise
     if @goat.save
       redirect_to goat_path(@goat)
     else
-      render :new, status: :unprocessable_entity
+      redirect_to user_profile_path(@user.id), status: :unprocessable_entity
     end
   end
 
   private
 
   def goat_params
-    require.params(:goat).permit(:name, :category, :description, :image_url, :price_per_day, :transport_fee, :cleaning_fee)
+    params.require(:goat).permit(:name, :category, :description, :price_per_day, :transport_fee, :cleaning_fee)
   end
 
   def set_user

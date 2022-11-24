@@ -21,11 +21,22 @@ class GoatsController < ApplicationController
 
   def create
     @goat = Goat.new(goat_params)
-
+    @goat.user = @user
     if @goat.save
       redirect_to goat_path(@goat)
     else
       render :new, status: :unprocessable_entity
     end
   end
+
+  private
+
+  def goat_params
+    require.params(:goat).permit(:name, :category, :description, :image_url, :price_per_day, :transport_fee, :cleaning_fee)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
+  end
+
 end

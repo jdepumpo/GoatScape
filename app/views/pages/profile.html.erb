@@ -50,9 +50,45 @@
               <%total = @user.goats.count%>
               <li><strong>You have:</strong> <%= total %> Goats</li>
             </ul>
-            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Add new Goat</button>
+            <button type="button" class="w-100 btn btn-lg btn-outline-primary" link="/goats">Add new Goat</button>
+            <button type="button" class="w-100 btn btn-lg btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Add new Goat
+            </button>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Add a new Goat</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h2></h2>
+        <%= simple_form_for @goat, url: new_goat_path do |f| %>
+          <%= f.error_notification %>
+          <%= f.input :name %>
+          <%= f.input :category, collection: ["Yoga Goat", "Grazing Goat", "Company Goat", "Birthday Goat", "Decoration Goat", "Seeing Goat", "Guardian Goat", "Entertaining Goat"]%>
+          <%= f.input :description %>
+          <%= f.input :image_url, as: :file, label: "Goat pic" %>
+          <%= f.input :price_per_day %>
+          <%= f.input :transport_fee %>
+          <%= f.input :cleaning_fee %>
+
+          <%= f.button :submit, class: "btn-primary" %>
+          <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <%# <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Add this Goat</button> %>
+        <%# <%= f.button :submit, class: "btn btn-primary" %> %>
+        <%# <% end %> %>
+      </div>
+    </div>
+  </div>
+</div>

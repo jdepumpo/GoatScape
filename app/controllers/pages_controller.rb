@@ -4,5 +4,7 @@ class PagesController < ApplicationController
 
   def profile
     @user = current_user
+    @my_goats = current_user.goats
+    @goat = Goat.new
   end
 end

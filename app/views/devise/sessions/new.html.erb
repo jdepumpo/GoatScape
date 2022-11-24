@@ -2,8 +2,8 @@
 	<div class="form-container sign-up-container">
 
 		<form class ="login-form"action="#">
-			<h1>Create Account</h1>
-			<div class="social-container">
+			<h1 style="display:flex; justify-content:center">Create Account</h1>
+			<div class="social-container" style="margin: 20px;">
 				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
 				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
 				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
@@ -12,7 +12,7 @@
 			<input class="sign_in_input" type="text" placeholder="Name" />
 			<input class="sign_in_input" type="email" placeholder="Email" />
 			<input class="sign_in_input" type="password" placeholder="Password" />
-			<button class="form_signin_button">Sign Up</button>
+			<center> <button  class="form_signin_button">Sign Up  </button> </center>
 		</form>
 	</div>
 
@@ -45,14 +45,18 @@
 	<div class="overlay-container">
 		<div class="overlay">
 			<div class="overlay-panel overlay-left">
-				<h1>Welcome Back!</h1>
-				<p>To keep connected with us please login with your personal info</p>
-				<button class=" form_signin_button ghost" id="signIn">Sign In</button>
 			</div>
-			<div class="overlay-panel overlay-right login_picture">
-				<h1>Hello, Friend!</h1>
-				<p>Enter your personal details and start journey with us</p>
-				<button class=" form_signin_button ghost" id="signUp">Sign Up</button>
+			<div class="overlay-panel overlay-right">
+        <div id="signInMessage"class="sign-in d-none">
+          <h1>Welcome Back!</h1>
+				  <p>To keep connected with us please login with your personal info</p>
+				  <button class=" form_signin_button ghost" id="signIn">Sign In</button>
+        </div>
+        <div id="signUpMessage" class="sign-up">
+        	<h1>Hello, Friend!</h1>
+				  <p>Enter your personal details and start your journey with us</p>
+				  <button class=" form_signin_button ghost" id="signUp">Sign Up</button>
+        </div>
 			</div>
 		</div>
 	</div>

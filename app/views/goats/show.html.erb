@@ -1,14 +1,17 @@
 
   <%= link_to "<", goats_path, class: "returnbtn btn btn-primary" %>
-  <div class="p-4 p-md-5 mb-4 rounded text-bg-dark flex">
-    <div class="row g-5 justify-content-center">
-      <div class="col-12 col-lg-8 px-4">
-        <h1 class="display-4 fst-italic"><%= @goat.name %></h1>
+  <div class="p-4 p-md-5 mb-4 rounded flex" style="background-color: #798e77; color:white; border-radius: 10px!important">
+  <div class="row g-5 justify-content-center">
+    <div class="banner_show col-12 col-lg-8 px-4">
+      <h1 class=" display-4 fst-italic"><%= @goat.name %></h1>
+      <hr style="border: 2px solid; color: white;">
+      <div class="d-flex justify-content-center align-items-center" style="height: 79%;">
         <p class="lead my-3"><%= @goat.description %></p>
       </div>
       <div class="col-12 col-lg-4 order-first order-lg-last d-flex justify-content-center align-items-center">
         <div><%= cl_image_tag(@goat.image_url, width: 250, crop: :fill) %></div>
       </div>
+    </div>
     </div>
   </div>
 
@@ -16,11 +19,11 @@
     <div class="col-md-8">
       <div class="row">
         <div class="col-12">
-          <div class="card rounded border w-100">
+          <div class="card rounded border w-100" style="border-radius: 10px!important;">
             <div class="card-body">
               <h5 class="card-title">Rating:
                 <% @goat.rating.round(0).times do %>
-                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star" style="font-size: 15px; color:#FFC978"></i>
                 <% end %>
                 <% (5 - @goat.rating.round(0)).times do %>
                   <i class="fa-regular fa-star"></i>
@@ -33,7 +36,7 @@
 
       <div class="row">
         <div class="col-12">
-          <div class="card rounded border w-100">
+          <div class="card rounded border w-100" style="border-radius: 10px!important;">
             <div class="card-body">
               <h5 class="card-title">Age:
                 <strong><%= @goat.age %></strong>
@@ -45,40 +48,40 @@
 
       <div class="row mb-4">
         <div class="col-sm-6">
-          <div class="card rounded border w-100 h-100">
+          <div class="card rounded border w-100 h-100" style="border-radius: 10px!important;">
             <div class="card-body text-center">
             <i class="fa-regular fa-face-grin-tongue-squint fs-2 text-primary mb-2"></i>
               <h5 class="card-title">Anti-Spit Training</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <p class="card-text" style="color: #7b7878; margin-top: 17px;">With supporting text below as a natural lead-in to additional content.</p>
             </div>
           </div>
         </div>
         <div class="col-sm-6">
-          <div class="card rounded border w-100  h-100">
+          <div class="card rounded border w-100  h-100" style="border-radius: 10px!important;">
             <div class="card-body text-center">
             <i class="fa-solid fa-car-burst fs-2 text-primary mb-2"></i>
               <h5 class="card-title">Comprehensive insurance coverage</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <p class="card-text" style="color: #7b7878; margin-top: 17px;">With supporting text below as a natural lead-in to additional content.</p>
             </div>
           </div>
         </div>
       </div>
       <div class="row mb-4">
         <div class="col-sm-6">
-          <div class="card rounded border w-100 h-100">
+          <div class="card rounded border w-100 h-100" style="border-radius: 10px!important;">
             <div class="card-body text-center">
             <i class="fa-solid fa-earth-europe fs-2 text-primary mb-2"></i>
               <h5 class="card-title">Bio-Green Certified</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <p class="card-text" style="color: #7b7878; margin-top: 17px;">With supporting text below as a natural lead-in to additional content.</p>
             </div>
           </div>
         </div>
         <div class="col-sm-6">
-          <div class="card rounded border w-100  h-100">
+          <div class="card rounded border w-100  h-100" style="border-radius: 10px!important;">
             <div class="card-body text-center">
             <i class="fa-solid fa-utensils fs-2 text-primary mb-2"></i>
               <h5 class="card-title">1 Acre/hour</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <p class="card-text" style="color: #7b7878; margin-top: 17px;">With supporting text below as a natural lead-in to additional content.</p>
             </div>
           </div>
         </div>
@@ -111,7 +114,7 @@
 
     <div class="col-md-4">
       <div class="position-sticky" style="top: 2rem;">
-        <div class="card mb-4 rounded-3 shadow w-100">
+        <div class="card mb-4 rounded-3 shadow w-100" style="border-radius: 10px!important;">
           <div class="card-header py-3">
             <h4 class="my-0 fw-normal">Pricing</h4>
           </div>
@@ -124,11 +127,11 @@
               <%total = @goat.price_per_day + @goat.cleaning_fee + @goat.cleaning_fee %>
               <li><strong>Total:</strong> €<%= total %></li>
             </ul>
-            <button type="button" class="w-100 btn btn-lg btn-outline-primary">Book <%= @goat.name %></button>
+            <button type="button" class="w-100 btn btn-lg btn-outline-primary" style="border-radius: 34px!important;">Book <%= @goat.name %></button>
           </div>
         </div>
 
-      <div class="p-4 mb-3 rounded border position-relative">
+      <div class="p-4 mb-3 rounded border position-relative" style="border-radius: 10px!important;">
       This is a rare find! <strong><%= @goat.name %> is usually booked!</strong>
         <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-danger hot-goat">
           HOT GOAT!

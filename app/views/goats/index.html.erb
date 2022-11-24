@@ -28,11 +28,21 @@
             <h5 class="card-title mb-0"><%= goat.name %></h5>
             <p class="price"><%= goat.price_per_day %>€/h</p>
           </div>
+          <div class="d-flex justify-content-between">
           <span class="goat-category"><%= goat.category %></span>
           <%# <p class="card-text"><%= goat.description </p> %>
-          <%= link_to goat_path(goat.id) do %>
-            <i class="fa-solid fa-cart-plus"></i>
+
+          <div></div>
+          <% if current_user.favorited?(goat) %>
+            <%= link_to unfavorite_goat_path(goat), data: { turbo_method: :patch } do %>
+              <i class="fa-solid fa-heart heart-icon ml-10"></i>
+            <% end %>
+          <% else %>
+            <%= link_to favorite_goat_path(goat), data: { turbo_method: :patch } do %>
+                <i class="fa-regular fa-heart heart ml-10"></i>
+            <% end %>
           <% end %>
+          </div>
         </div>
       </div>
     <% end %>

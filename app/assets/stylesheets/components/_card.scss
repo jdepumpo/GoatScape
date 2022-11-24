@@ -61,7 +61,20 @@
 .star{
   color: #FFC978;
 }
- .price{
+
+.heart {
+  color: black;
+  text-decoration: none !important;
+  margin-left: 50;
+}
+
+.heart-icon {
+  color: red;
+  text-decoration: none !important;
+  margin-left: 50;
+}
+
+ .price {
   right: 15px;
   margin-bottom: 0;
   display: flex;

@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :goats
   has_many :bookings
+  acts_as_favoritor
 
   # has_one_attached :profile_pic
 end

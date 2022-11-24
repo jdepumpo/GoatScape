@@ -5,11 +5,14 @@ class GoatsController < ApplicationController
     else
       @goats = Goat.all
     end
+    @markers = @goats.geocoded.map do |goat|
+      { lat: goat.latitude, lng: goat.longitude, image_url: helpers.asset_url("goat.png") }
+    end
   end
 
   def show
     @goat = Goat.find(params[:id])
-    @markers = [{ lat: @goat.latitude, lng: @goat.longitude }]
+    @markers = [{ lat: @goat.latitude, lng: @goat.longitude, image_url: helpers.asset_url("goat.png") }]
   end
 
   def new

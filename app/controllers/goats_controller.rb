@@ -28,4 +28,18 @@ class GoatsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
+
+  def unfavorite
+    goat = Goat.find(params[:id])
+    current_user.unfavorite(goat)
+
+    redirect_to goats_path(goat)
+  end
+
+  def favorite
+    goat = Goat.find(params[:id])
+    current_user.favorite(goat)
+
+    redirect_to goats_path(goat)
+  end
 end

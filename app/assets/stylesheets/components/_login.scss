@@ -1,48 +1,52 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
-* {
-	box-sizing: border-box;
+.login_picture {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-image: url(login.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    z-index: -1;
+  }
 }
 
-// body {
-// 	background: #f6f5f7;
-// 	display: flex;
-// 	justify-content: center;
-// 	align-items: center;
-// 	flex-direction: column;
-// 	font-family: 'Montserrat', sans-serif;
-// 	height: 100vh;
-// 	margin: -20px 0 50px;
-// }
 
-
-button {
+.form_signin_button {
 	border-radius: 20px;
-	border: 1px solid #FF4B2B;
-	background-color: #FF4B2B;
+	border: 1px solid #8ca38a;;
+	background-color: #8ca38a;;
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
 	padding: 12px 45px;
 	letter-spacing: 1px;
 	text-transform: uppercase;
-	transition: transform 80ms ease-in;
+  margin: 17px;
 }
 
-button:active {
+.form_signin_button:active {
 	transform: scale(0.95);
 }
 
-button:focus {
+.form_signin_button:focus {
 	outline: none;
 }
 
-button.ghost {
+.ghost {
 	background-color: transparent;
 	border-color: #FFFFFF;
 }
 
-form {
+.form_signin {
 	background-color: #FFFFFF;
 	display: flex;
 	align-items: center;
@@ -59,10 +63,10 @@ form {
 	padding: 12px 15px;
 	margin: 8px 0;
 	width: 100%;
+  border-radius: 19px;
 }
 
 .login_container {
-  // margin-top: 121px;
 	background-color: #fff;
 	border-radius: 10px;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
@@ -71,11 +75,12 @@ form {
 	width: 768px;
 	max-width: 100%;
 	min-height: 480px;
+  top: 30px;
+  margin: auto;
 }
 
 .form-container {
 	position: absolute;
-	top: 0;
 	height: 100%;
 	transition: all 0.6s ease-in-out;
 }
@@ -86,9 +91,20 @@ form {
 	z-index: 2;
 }
 
-.login_container.right-panel-active .sign-in-container {
-	transform: translateX(100%);
+
+.sign-in-container h1{
+  justify-content: center;
+  display: flex;
+  padding: 20px;
 }
+
+.login_container.right-panel-active .sign-in-container {
+  transform: translateX(100%);
+  opacity: 1;
+	z-index: 5;
+	animation: show 0.6s;
+}
+
 
 .sign-up-container {
 	left: 0;
@@ -118,7 +134,7 @@ form {
 
 .overlay-container {
 	position: absolute;
-	top: 0;
+
 	left: 50%;
 	width: 50%;
 	height: 100%;
@@ -132,9 +148,9 @@ form {
 }
 
 .overlay {
-	background: #FF416C;
+	background: black;
 	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-	background: linear-gradient(to right, #FF4B2B, #FF416C);
+	background: linear-gradient(to right, black, black);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
@@ -159,7 +175,7 @@ form {
 	flex-direction: column;
 	padding: 0 40px;
 	text-align: center;
-	top: 0;
+	// top: 0;
 	height: 100%;
 	width: 50%;
 	transform: translateX(0);
@@ -184,8 +200,11 @@ form {
 }
 
 .social-container {
-	margin: 20px 0;
+
+  display: flex;
+  justify-content: center;
 }
+
 
 .social-container a {
 	border: 1px solid #DDDDDD;
@@ -196,4 +215,13 @@ form {
 	margin: 0 5px;
 	height: 40px;
 	width: 40px;
+}
+
+.social-container-inputs{
+margin: 0 20px;
+}
+
+.form-actions{
+  display: flex;
+  justify-content: center;
 }

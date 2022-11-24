@@ -8,10 +8,9 @@
       <div class="d-flex justify-content-center align-items-center" style="height: 79%;">
         <p class="lead my-3"><%= @goat.description %></p>
       </div>
+      <div class="col-12 col-lg-4 order-first order-lg-last d-flex justify-content-center align-items-center">
+        <div><%= cl_image_tag(@goat.image_url, width: 250, crop: :fill) %></div>
       </div>
-         <div class="col-12 col-lg-4 order-first order-lg-last">
-          <%= cl_image_tag(@goat.image_url, class: "banner_img", width: 250, crop: :fill) %>
-        </div>
     </div>
     </div>
   </div>

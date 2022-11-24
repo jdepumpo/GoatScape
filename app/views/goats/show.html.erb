@@ -1,6 +1,5 @@
-
-  <%= link_to "<", goats_path, class: "returnbtn btn btn-primary" %>
-  <div class="p-4 p-md-5 mb-4 rounded flex" style="background-color: #798e77; color:white; border-radius: 10px!important">
+<%= link_to "<", goats_path, class: "returnbtn btn btn-primary" %>
+<div class="p-4 p-md-5 mb-4 rounded flex" style="background-color: #798E77; color:white; border-radius: 10px!important">
   <div class="row g-5 justify-content-center">
     <div class="banner_show col-12 col-lg-8 px-4">
       <h1 class=" display-4 fst-italic"><%= @goat.name %></h1>
@@ -8,13 +7,12 @@
       <div class="d-flex justify-content-center align-items-center" style="height: 79%;">
         <p class="lead my-3"><%= @goat.description %></p>
       </div>
-      <div class="col-12 col-lg-4 order-first order-lg-last d-flex justify-content-center align-items-center">
-        <div><%= cl_image_tag(@goat.image_url, width: 250, crop: :fill) %></div>
-      </div>
     </div>
+    <div class="col-12 col-lg-4 order-first order-lg-last d-flex justify-content-center align-items-center">
+      <%= cl_image_tag(@goat.image_url, class: "banner_img", width: 250, crop: :fill) %>
     </div>
   </div>
-
+</div>
   <div class="row g-5">
     <div class="col-md-8">
       <div class="row">
@@ -33,7 +31,6 @@
           </div>
         </div>
       </div>
-
       <div class="row">
         <div class="col-12">
           <div class="card rounded border w-100" style="border-radius: 10px!important;">
@@ -45,14 +42,13 @@
           </div>
         </div>
       </div>
-
       <div class="row mb-4">
         <div class="col-sm-6">
           <div class="card rounded border w-100 h-100" style="border-radius: 10px!important;">
             <div class="card-body text-center">
             <i class="fa-regular fa-face-grin-tongue-squint fs-2 text-primary mb-2"></i>
               <h5 class="card-title">Anti-Spit Training</h5>
-              <p class="card-text" style="color: #7b7878; margin-top: 17px;">With supporting text below as a natural lead-in to additional content.</p>
+              <p class="card-text" style="color: #7B7878; margin-top: 17px;">With supporting text below as a natural lead-in to additional content.</p>
             </div>
           </div>
         </div>
@@ -61,7 +57,7 @@
             <div class="card-body text-center">
             <i class="fa-solid fa-car-burst fs-2 text-primary mb-2"></i>
               <h5 class="card-title">Comprehensive insurance coverage</h5>
-              <p class="card-text" style="color: #7b7878; margin-top: 17px;">With supporting text below as a natural lead-in to additional content.</p>
+              <p class="card-text" style="color: #7B7878; margin-top: 17px;">With supporting text below as a natural lead-in to additional content.</p>
             </div>
           </div>
         </div>
@@ -72,7 +68,7 @@
             <div class="card-body text-center">
             <i class="fa-solid fa-earth-europe fs-2 text-primary mb-2"></i>
               <h5 class="card-title">Bio-Green Certified</h5>
-              <p class="card-text" style="color: #7b7878; margin-top: 17px;">With supporting text below as a natural lead-in to additional content.</p>
+              <p class="card-text" style="color: #7B7878; margin-top: 17px;">With supporting text below as a natural lead-in to additional content.</p>
             </div>
           </div>
         </div>
@@ -81,17 +77,15 @@
             <div class="card-body text-center">
             <i class="fa-solid fa-utensils fs-2 text-primary mb-2"></i>
               <h5 class="card-title">1 Acre/hour</h5>
-              <p class="card-text" style="color: #7b7878; margin-top: 17px;">With supporting text below as a natural lead-in to additional content.</p>
+              <p class="card-text" style="color: #7B7878; margin-top: 17px;">With supporting text below as a natural lead-in to additional content.</p>
             </div>
           </div>
         </div>
       </div>
-
       <article class="blog-post">
       <p><%= @goat.name %> is naturally curious. They are agile and well known for their ability to climb and balance in precarious places. This makes them the only ruminant to regularly climb trees. Due to their agility and inquisitiveness, they are notorious for escaping their pens by testing fences and enclosures, either intentionally or simply because they are used to climbing. If any of the fencing can be overcome, goats will almost inevitably escape. Goats have been found to be as intelligent as dogs by some studies.</p>
        </article>
       <hr />
-
       <div class="row my-4">
         <div class="col-12">
           <div class="card rounded border w-100">
@@ -103,15 +97,12 @@
           </div>
         </div>
       </div>
-
       <div style="width: 100%; height: 400px;"
         data-controller="map"
         data-map-markers-value="<%= @markers.to_json %>"
         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     </div>
-
-
     <div class="col-md-4">
       <div class="position-sticky" style="top: 2rem;">
         <div class="card mb-4 rounded-3 shadow w-100" style="border-radius: 10px!important;">
@@ -130,7 +121,6 @@
             <button type="button" class="w-100 btn btn-lg btn-outline-primary" style="border-radius: 34px!important;">Book <%= @goat.name %></button>
           </div>
         </div>
-
       <div class="p-4 mb-3 rounded border position-relative" style="border-radius: 10px!important;">
       This is a rare find! <strong><%= @goat.name %> is usually booked!</strong>
         <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-danger hot-goat">

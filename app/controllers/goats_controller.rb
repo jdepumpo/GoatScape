@@ -37,4 +37,17 @@ class GoatsController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def unfavorite
+    goat = Goat.find(params[:id])
+    current_user.unfavorite(goat)
+
+    redirect_to goats_path(goat)
+  end
+
+  def favorite
+    goat = Goat.find(params[:id])
+    current_user.favorite(goat)
+
+    redirect_to goats_path(goat)
+  end
 end

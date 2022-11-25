@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "pages#home"
   resources :goats, only: %i[index show create] do
-    resources :bookings, only: %i[create show]
+    resources :bookings, only: %i[create new show]
     member do
       patch :favorite, :unfavorite
     end

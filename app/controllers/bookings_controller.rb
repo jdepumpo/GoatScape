@@ -9,11 +9,19 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
-    if @goat.save
-      redirect_to booking_path(@booking)
+    @goat = Goat.find(params[:goat_id])
+    @booking = Booking.new(user: current_user, goat: @goat, start_date: params[:start_date], end_date: params[:end_date])
+    if @booking.save
+      redirect_to user_profile_path(current_user.id)
     else
       render :new, status: :unprocessable_entity
+      puts "that didn't work"
     end
+  end
+
+  private
+
+  def booking_params
+    params.require(:booking).permit(:dates)
   end
 end

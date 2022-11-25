@@ -177,18 +177,14 @@
           </div>
 
           <hr class="my-4">
-        <%= form_for(@booking, url: goat_bookings_path) do |f| %>
-          <div class="actions">
-              <%= f.hidden_field :user_id %>
-              <%= hidden_field_tag value: current_user.id  %>
-              <%= f.hidden_field :goat_id %>
-              <%= hidden_field_tag value: @goat.id  %>
+        <%= form_for [@goat, @booking] do |f| %>
+
+
               <%= f.hidden_field :start_date %>
-              <%= hidden_field_tag value: @start_date  %>
+              <%= hidden_field_tag :start_date, @start_date  %>
               <%= f.hidden_field :end_date %>
-              <%= hidden_field_tag value: @end_date  %>
+              <%= hidden_field_tag :end_date, @end_date  %>
               <%= f.submit "Confirm Your Booking", class: "w-100 btn btn-primary btn-lg"  %>
-          </div>
         <% end %>
       </div>
     </div>

@@ -27,16 +27,6 @@ class GoatsController < ApplicationController
     end
   end
 
-  private
-
-  def goat_params
-    params.require(:goat).permit(:name, :category, :description, :price_per_day, :transport_fee, :cleaning_fee)
-  end
-
-  def set_user
-    @user = User.find(params[:id])
-  end
-
   def unfavorite
     goat = Goat.find(params[:id])
     current_user.unfavorite(goat)
@@ -50,4 +40,15 @@ class GoatsController < ApplicationController
 
     redirect_to goats_path(goat)
   end
+
+  private
+
+  def goat_params
+    params.require(:goat).permit(:name, :category, :description, :price_per_day, :transport_fee, :cleaning_fee)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
+  end
+
 end

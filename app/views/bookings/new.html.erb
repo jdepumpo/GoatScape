@@ -31,13 +31,6 @@
             </div>
             <span class="text-muted">€<%= @goat.cleaning_fee %></span>
           </li>
-          <li class="list-group-item d-flex justify-content-between bg-light">
-            <div class="text-success">
-              <h6 class="my-0">Promo code</h6>
-              <small>GoatedOnTheSticks</small>
-            </div>
-            <span class="text-success">−€5</span>
-          </li>
           <li class="list-group-item d-flex justify-content-between">
             <span>Total (EUR)</span>
             <strong>€<%= (@goat.price_per_day * @days) + @goat.cleaning_fee + @goat.transport_fee %></strong>
@@ -57,7 +50,7 @@
           <div class="row g-3">
             <div class="col-sm-6">
               <label for="firstName" class="form-label">First name</label>
-              <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+              <input type="text" class="form-control" id="firstName" placeholder="" value="<%= current_user.first_name %>" required="">
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
@@ -65,26 +58,15 @@
 
             <div class="col-sm-6">
               <label for="lastName" class="form-label">Last name</label>
-              <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+              <input type="text" class="form-control" id="lastName" placeholder="" value="<%= current_user.last_name %>" required="">
               <div class="invalid-feedback">
                 Valid last name is required.
               </div>
             </div>
 
             <div class="col-12">
-              <label for="username" class="form-label">Username</label>
-              <div class="input-group has-validation">
-                <span class="input-group-text">@</span>
-                <input type="text" class="form-control" id="username" placeholder="Username" required="">
-              <div class="invalid-feedback">
-                  Your username is required.
-                </div>
-              </div>
-            </div>
-
-            <div class="col-12">
               <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
-              <input type="email" class="form-control" id="email" placeholder="you@example.com">
+              <input type="email" class="form-control" id="email" placeholder="you@example.com" value="<%= current_user.email %>">
               <div class="invalid-feedback">
                 Please enter a valid email address for shipping updates.
               </div>
@@ -150,19 +132,14 @@
 
           <h4 class="mb-3">Payment</h4>
 
-          <div class="my-3">
-            <div class="form-check">
-              <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked="" required="">
-              <label class="form-check-label" for="credit">Credit card</label>
-            </div>
-            <div class="form-check">
-              <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required="">
-              <label class="form-check-label" for="debit">Debit card</label>
-            </div>
-            <div class="form-check">
-              <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required="">
-              <label class="form-check-label" for="paypal">PayPal</label>
-            </div>
+          <div class="row my-3">
+          <div class="col-12 fs-3">
+            <i class="fa-brands fa-cc-visa"></i>
+            <i class="fa-brands fa-cc-mastercard"></i>
+            <i class="fa-brands fa-cc-jcb"></i>
+            <i class="fa-brands fa-cc-discover"></i>
+            <i class="fa-brands fa-cc-amex"></i>
+          </div>
           </div>
 
           <div class="row gy-3">

@@ -20,7 +20,7 @@
             <div class="card-header py-3" style="border-radius: 10px 10px 0 0;">
               <h4 class="my-0 fw-normal">Your info</h4>
             </div>
-            <h5 class="card-title p-3 m-0">
+            <h5 class="card-title p-3 m-0" style="border-radius:10px">
               <strong>Your email:</strong>
               <p><%= @user.email %></p>
               <strong>Your address:</strong>
@@ -79,7 +79,7 @@
             <%goat_total = @user.goats.count%>
             <li><strong>You have:</strong> <%= goat_total %> Goats</li>
           </ul>
-          <button type="button" class="w-100 btn btn-lg btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <button type="button" class="w-100 btn btn-lg btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="border-radius: 21px; background-color: #8ca38a; color: white;">
             Add new Goat
           </button>
         </div>
@@ -154,10 +154,12 @@
           <% end %>
         </div>
         <hr />
-        <li><strong>You have:</strong> <%= @user.all_favorites.count %> Favorited Goat<%= @user.all_favorites.count == 1 ? "" : "s" %></li>
-        <%= link_to "/goats", class: "w-50 btn btn-lg btn-outline-primary mt-2" do %>
-          Favorite A Goat
-        <% end %>
+        <div style="display:flex; align-content:center; margin: 24px;">
+          <li><strong>You have:</strong> <%= @user.all_favorites.count %> Favorited Goat<%= @user.all_favorites.count == 1 ? "" : "s" %></li>
+          <%= link_to "/goats", class: "w-50 btn btn-lg btn-outline-primary mt-2", style: "border-radius: 21px; background-color: #8ca38a; color: white; width: 167px!important; font-size: 15px; position: absolute; right: 37px; top: 482px;" do %>
+            Favorite A Goat
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

@@ -1,10 +1,13 @@
 <div class="containsAll container" style="padding-top: 27px">
-  <div class="position-filters dropdown">
-    <button class="filter-category btn btn-secondary"  style="margin-bottom: 30px; margin-right: 10px;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="fa-solid fa-map-location-dot"></i></button>
-    <button class="filter-category btn btn-secondary dropdown-toggle"  style="margin-bottom: 30px;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-      <%= image_tag "filter.png", class: "filter-image" %> Filters
-    </button>
-    <ul class="dropdown-menu">
+<div class="position-filters dropdown">
+  <button class="filter-category btn btn-secondary"  style="margin-bottom: 30px; margin-right: 10px;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="fa-solid fa-map-location-dot"></i></button>
+
+  <button class="filter-category btn btn-secondary dropdown-toggle"  style="margin-bottom: 30px;" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+   <%= image_tag "filter.png", class: "filter-image" %> Filters
+  </button>
+
+  <ul class="dropdown-menu">
+
       <% goat_categories.each do |category| %>
         <%= link_to category, goats_path(category: category), class: "dropdown-item" %>
       <% end %>
@@ -14,7 +17,7 @@
   <div class="cards mb-10px">
     <% @goats.each do |goat| %>
       <div class="card animated_card">
-        <%= link_to goat_path(goat.id), class: "position-relative" do %>
+        <%= link_to goat_path(goat.id, dates: params[:dates]), class: "position-relative" do %>
           <%= cl_image_tag(goat.image_url, class: "card-img-top") %>
           <p class="star-icon m-0 px-2 mb-0">
             <i class="fa-solid fa-star star"></i> <%= goat.rating %>

@@ -63,15 +63,29 @@
 }
 
 .heart {
-  color: black;
+  color: #fd395c;
   text-decoration: none !important;
-  margin-left: 50;
+  right: 10px;
+  top: 10px;
+  position: absolute;
+  font-size: 16px;
+  background-color:rgba(255,255,255,0.6);
+  border-radius: 26px;
+  padding: 6px;
 }
 
 .heart-icon {
-  color: red;
+  color: #fd395c;
   text-decoration: none !important;
   margin-left: 50;
+  right: 10px;
+  top: 10px;
+  position: absolute;
+  font-size: 16px;
+  border: #fd395c;
+  background-color: rgba(255,255,255,0.6);
+  border-radius: 26px;
+  padding: 6px;
 }
 
  .price {
@@ -85,4 +99,3 @@
   color: rgb(123, 120, 120);
   font-size: 13px;
  }
-

@@ -4,13 +4,13 @@
     <div class="banner_show col-12 col-lg-8 px-4">
       <h1 class=" display-4 fst-italic"><%= @goat.name %></h1>
       <hr style="border: 2px solid; color: white;">
-      <div class="d-flex justify-content-center align-items-center" style="height: 79%;">
+      <div class="d-flex justify-content-start align-items-center" style="height: 79%;">
         <p class="lead my-3"><%= @goat.description %></p>
       </div>
     </div>
     <div class="col-12 col-lg-4 order-first order-lg-last d-flex justify-content-center align-items-center">
       <div class="fill">
-        <%= cl_image_tag(@goat.image_url, height:333, width:368, crop:"fill") %>
+        <%= cl_image_tag(@goat.photo.key, height:333, width:368, crop:"fill") %>
       </div>
     </div>
   </div>
@@ -50,7 +50,7 @@
             <div class="card-body text-center">
             <i class="fa-regular fa-face-grin-tongue-squint fs-2 text-primary mb-2"></i>
               <h5 class="card-title">Anti-Spit Training</h5>
-              <p class="card-text" style="color: #7B7878; margin-top: 17px;">This Goat has been intensively trained with the innovative 'Anti-spitting Behaviour Training Course', recently developed by us, speciffically for our Goats.</p>
+              <p class="card-text" style="color: #7B7878; margin-top: 17px;">With supporting text below as a natural lead-in to additional content.</p>
             </div>
           </div>
         </div>
@@ -59,7 +59,7 @@
             <div class="card-body text-center">
             <i class="fa-solid fa-car-burst fs-2 text-primary mb-2"></i>
               <h5 class="card-title">Comprehensive insurance coverage</h5>
-              <p class="card-text" style="color: #7B7878; margin-top: 17px;">The booking of this Goat, comes with a broad insurance coverage, that includes accidental damage to your property, or injuries related to the handling of the Goat.</p>
+              <p class="card-text" style="color: #7B7878; margin-top: 17px;">With supporting text below as a natural lead-in to additional content.</p>
             </div>
           </div>
         </div>
@@ -70,7 +70,7 @@
             <div class="card-body text-center">
             <i class="fa-solid fa-earth-europe fs-2 text-primary mb-2"></i>
               <h5 class="card-title">Bio-Green Certified</h5>
-              <p class="card-text" style="color: #7B7878; margin-top: 17px;">This Goat (or any of our goats for that matter) doesn't produce any non-natural substance while in operation. It's the cleanest way to have your lawn or field taken care of.</p>
+              <p class="card-text" style="color: #7B7878; margin-top: 17px;">With supporting text below as a natural lead-in to additional content.</p>
             </div>
           </div>
         </div>
@@ -78,8 +78,8 @@
           <div class="card rounded border w-100  h-100" style="border-radius: 10px!important;">
             <div class="card-body text-center">
             <i class="fa-solid fa-utensils fs-2 text-primary mb-2"></i>
-              <h5 class="card-title"><%=acres = rand(0.2..2.0).round(1)%> Acres/hour</h5>
-              <p class="card-text" style="color: #7B7878; margin-top: 17px;">This Goat grazes roughly <%= acres %> acres per hour on a typical day.</p>
+              <h5 class="card-title">1 Acre/hour</h5>
+              <p class="card-text" style="color: #7B7878; margin-top: 17px;">With supporting text below as a natural lead-in to additional content.</p>
             </div>
           </div>
         </div>
@@ -106,9 +106,9 @@
       </div>
     </div>
     <div class="col-md-4">
-      <div class="position-sticky" style="top: 116px;">
+      <div class="position-sticky" style="top: 2rem;">
         <div class="card mb-4 rounded-3 shadow w-100" style="border-radius: 10px!important;">
-          <div class="card-header py-3" style="border-radius: 10px 10px 0 0;">
+          <div class="card-header py-3">
             <h4 class="my-0 fw-normal">Pricing</h4>
           </div>
           <div class="card-body">

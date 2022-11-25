@@ -17,21 +17,25 @@
         <div>
           <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="display: flex; align-items: center;">
           <div style="display: flex; align-items: center; padding: 10px;">
-            <%= form.text_field :address, placeholder: "Location", style: "border: none", input_html: {data: {address_autocomplete_target: "address"}},
+            <%= form.text_field :address, placeholder: "Location", style: "border: none; background: none; outline:none; width: 97px;", input_html: {data: {address_autocomplete_target: "address"}},
               wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
             %>
             </div class="d-flex">
           <li class="nav-item">
-          <i class="fa-regular fa-calendar" style="color: #5D6E5B; font-size: 15px;"></i>
-          <input placeholder="Select Dates" name="dates" data-flatpickr-target="calendarInput" data-controller="flatpickr" style="border: none; width: 220px;" required>
+            <i class="fa-regular fa-calendar" style="color: #5D6E5B; font-size: 15px;"></i>
+            <input placeholder="Select Dates" name="dates" data-flatpickr-target="calendarInput" data-controller="flatpickr" style="border: none; width: 113px; background: none; outline:none;" required>
           </li>
-          <li class="nav-item dropdown">
-              <%= form.select :category, cat, placeholder: "Category", class: "dropdown" %>
+
+          <div class="btn btn-secondary dropdown" style="border:none; background:none;">
+          <li class="nav-item dropdown category-select" style="background:none; border: none!important;">
+             <%= form.select :category, cat, placeholder: "Category" %>
             </ul>
           </li>
         </ul>
         </div>
-          <%= form.submit :type => :image, :src => "_button.png" %>
+          <%# <%= form.submit :type => :image, :src => "app/assets/images/_button.png" %>
+          <%= image_submit_tag("_button.png", style: "width:30px" )%>
+          <%# <%= f.submit :type => :image, :src => image_path("_button.png") %>
       </div>
     </div>
   </nav>
@@ -62,10 +66,6 @@
             </button>
           </li>
         <% end %>
-      <%# <div class="button-div">
-          <li class="nav-item btn btn-primary" id="login-button" style="border-radius:50px; box-shadow: 0 1px 2px rgb(0 0 0 / 8%);">
-          <a class="nav-link" style="color:white" href="/users/sign_in">Login</a>
-      </div> %>
       </ul>
     </div>
   </div>

@@ -31,6 +31,36 @@
           </div>
         </div>
       </div>
+
+      <% if @user.bookings.exists? %>
+        <div class="row">
+          <div class="col-12">
+            <div class="card rounded-3 shadow w-100">
+              <div class="card-body p-0">
+                <div class="card-header py-3">
+                  <h4 class="my-0 fw-normal">My Bookings</h4>
+                </div>
+                <div class="p-3">
+                  <% @user.bookings.each do |booking| %>
+                  <%= cl_image_tag(booking.goat.photo.key, height:333, width:368, crop:"fill") %>
+                    <h5 class="card-title p-3 m-0">
+                      <strong>Goat: </strong>
+                      <p><%= booking.goat.name %></p>
+                      <strong>Rental begins: </strong>
+                      <p><%= booking.start_date %></p>
+                      <strong>Rental ends: </strong>
+                      <p><%= booking.end_date %></p>
+                      <strong>You'll enjoy <%= booking.goat.name %>'s services for <%= (booking.end_date - booking.start_date).to_i %> days.</strong>
+                      <hr />
+                    </h5>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
     </div>
   </div>
 
@@ -43,7 +73,7 @@
         <div class="card-body">
           <ul class="list-unstyled mt-3 mb-4">
             <% @user.goats.each do |goat| %>
-              <li><p class="fw-light"><%= goat.name %></p></li>
+              <li><p class="fw-light goat-name"><%= link_to goat.name.capitalize, goat_path(goat) %></p></li>
             <% end %>
             <hr />
             <%goat_total = @user.goats.count%>
@@ -73,7 +103,7 @@
           <%= f.input :name %>
           <%= f.input :category, collection: ["Yoga Goat", "Grazing Goat", "Company Goat", "Birthday Goat", "Decoration Goat", "Seeing Goat", "Guardian Goat", "Entertaining Goat"]%>
           <%= f.input :description %>
-          <%= f.input :image_url, as: :file, label: "Goat pic" %>
+          <%= f.input :photo, as: :file, label: "Goat pic" %>
           <%= f.input :price_per_day %>
           <%= f.input :transport_fee %>
           <%= f.input :cleaning_fee %>
@@ -84,9 +114,7 @@
         <% end %>
       </div>
       <div class="modal-footer">
-        <%# <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Add this Goat</button> %>
-        <%# <%= f.button :submit, class: "btn btn-primary" %> %>
-        <%# <% end %> %>
+        <p class="fw-light" style="color: grey;">You are about to welcome a new Goat to your family!</p>
       </div>
     </div>
   </div>
@@ -112,7 +140,7 @@
           <% @goats.each do |goat| %>
             <div class="card animated_card">
               <%= link_to goat_path(goat.favoritable.id), class: "position-relative" do %>
-                <%= cl_image_tag(goat.favoritable.image_url, class: "card-img-top") %>
+                <%= cl_image_tag(goat.favoritable.photo.key, class: "card-img-top") %>
               <% end %>
               <div class="card-body">
                 <div class="d-flex">

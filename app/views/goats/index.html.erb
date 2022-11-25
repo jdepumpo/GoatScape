@@ -35,7 +35,7 @@
           </div>
           <% if current_user.favorited?(goat) %>
             <%= link_to unfavorite_goat_path(goat), data: { turbo_method: :patch } do %>
-              <p><i class="fa-solid fa-heart heart-icon ml-10"></i></p>
+              <i class="fa-solid fa-heart heart-icon ml-10"></i>
             <% end %>
           <% else %>
             <%= link_to favorite_goat_path(goat), data: { turbo_method: :patch } do %>

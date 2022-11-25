@@ -18,7 +18,7 @@
     <% @goats.each do |goat| %>
       <div class="card animated_card">
         <%= link_to goat_path(goat.id, dates: params[:dates]), class: "position-relative" do %>
-          <%= cl_image_tag(goat.image_url, class: "card-img-top") %>
+          <%= cl_image_tag(goat.photo, class: "card-img-top") %>
           <p class="star-icon m-0 px-2 mb-0">
             <i class="fa-solid fa-star star"></i> <%= goat.rating %>
           </p>

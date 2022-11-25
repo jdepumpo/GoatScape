@@ -32,24 +32,34 @@
           </div>
         </div>
       </div>
-            <div class="row">
+<% if @user.bookings.exists? %>
+      <div class="row">
         <div class="col-12">
           <div class="card rounded-3 shadow w-100">
             <div class="card-body p-0">
               <div class="card-header py-3">
                 <h4 class="my-0 fw-normal">My Bookings</h4>
               </div>
-              <h5 class="card-title p-3 m-0">
-                <strong>Your Bookings</strong>
-                <p><%= @user.email %></p>
-                <strong>Your address:</strong>
-                <p><%= @user.address %></p>
-                <strong>Your phone number:</strong>
-                <p><%= @user.phone_number %></p>
-              </h5>
+              <div class="p-3">
+                <% @user.bookings.each do |booking| %>
+                <%= cl_image_tag(booking.goat.image_url, height:333, width:368, crop:"fill") %>
+                  <h5 class="card-title p-3 m-0">
+                    <strong>Goat: </strong>
+                    <p><%= booking.goat.name %></p>
+                    <strong>Rental begins: </strong>
+                    <p><%= booking.start_date %></p>
+                    <strong>Rental ends: </strong>
+                    <p><%= booking.end_date %></p>
+                    <hr />
+                    <strong>You'll enjoy <%= booking.goat.name %>'s services for <%= (booking.end_date - booking.start_date).to_i %> days.</strong>
+                  </h5>
+                <% end %>
+                </div>
             </div>
           </div>
         </div>
+<% end %>
+
       </div>
     </div>
 

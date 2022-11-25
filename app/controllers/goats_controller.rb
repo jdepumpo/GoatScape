@@ -12,6 +12,7 @@ class GoatsController < ApplicationController
 
   def show
     @goat = Goat.find(params[:id])
+    # raise
     @markers = [{ lat: @goat.latitude, lng: @goat.longitude, image_url: helpers.asset_url("goat.png") }]
   end
 
@@ -44,11 +45,10 @@ class GoatsController < ApplicationController
   private
 
   def goat_params
-    params.require(:goat).permit(:name, :category, :description, :price_per_day, :transport_fee, :cleaning_fee, :rating)
+    params.require(:goat).permit(:name, :category, :description, :price_per_day, :transport_fee, :cleaning_fee, :rating, :photo)
   end
 
   def set_user
     @user = User.find(params[:id])
   end
-
 end

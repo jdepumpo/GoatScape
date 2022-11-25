@@ -4,55 +4,44 @@
       <%= image_tag "logo.png", width: 200 %>
     <% end %>
 
+<% cat = [] %>
+<% goat_categories.each do |category| %>
+  <% cat << category %>
+<% end %>
 
-  <nav class="navbar navbar-expand-lg" style =" height: 46px; border-style: solid; border-color:#dddddd; border-radius: 40px; box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%); background-color: white;">
+
+<%= form_with url: "/goats", method: :get do |form| %>
+
+
+  <nav class="navbar navbar-expand-lg" style =" height: 46px; border-style: solid; border-color:#dddddd; border-radius: 40px; box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent" data-controller="flatpickr" style="align-items: center;">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" style="align-items: center;">
         <div>
           <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="display: flex; align-items: center;">
           <div style="display: flex; align-items: center; padding: 10px;">
-            <input placeholder="Select Dates" data-flatpickr-target="calendarInput" style="border: none; width: 114px;"><i class="fa-regular fa-calendar" style="color: #5d6e5b; font-size: 15px;"></i>
-          </div class="d-flex">
-          <li class="nav-item">
-
-          <%
-=begin%>
- <%= simple_form_for @goats do |f| %>
-            <%= f.input :address,
-              input_html: {data: {address_autocomplete_target: "address"}},
+            <%= form.text_field :address, placeholder: "Location", style: "border: none", input_html: {data: {address_autocomplete_target: "address"}},
               wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
             %>
-          <%= end %>
-<%
-=end%>
-
+            </div class="d-flex">
+          <li class="nav-item">
+          <i class="fa-regular fa-calendar" style="color: #5d6e5b; font-size: 15px;"></i>
+  <input placeholder="Select Dates" name="dates" data-flatpickr-target="calendarInput" data-controller="flatpickr" style="border: none; width: 220px;" required>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Category
-            </a>
-            <ul class="dropdown-menu">
-              <% goat_categories.each do |category| %>
-                <%= link_to category, goats_path(category: category), class: "dropdown-item" %>
-              <% end %>
-              <div class="dropdown-divider"></div>
-              <%= link_to "All Goats", goats_path, class: "dropdown-item" %>
+              <%= form.select :category, cat, placeholder: "Category", class: "dropdown" %>
             </ul>
           </li>
 
         </ul>
         </div>
-        <form class="d-flex" role="search" style="background:none!important; padding:0">
-          <button class="btn" type="submit">
-            <%= image_tag "_button.png", width: 30 %>
-          </button>
-        </form>
+          <%= form.submit :type => :image, :src => "_button.png" %>
       </div>
     </div>
   </nav>
+  <% end %>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">

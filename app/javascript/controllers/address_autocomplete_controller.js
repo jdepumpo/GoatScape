@@ -16,6 +16,14 @@ export default class extends Controller {
     this.geocoder.on("clear", () => this.#clearInputValue())
   }
 
+  #setInputValue(event) {
+    this.addressTarget.value = event.result["place_name"]
+  }
+
+  #clearInputValue() {
+    this.addressTarget.value = ""
+  }
+
   disconnect() {
     this.geocoder.onRemove()
   }

@@ -65,13 +65,21 @@
 .heart {
   color: black;
   text-decoration: none !important;
-  margin-left: 50;
+  right: 16px;
+  top: 23px;
+  position: absolute;
+  font-size: 20px;
 }
 
 .heart-icon {
-  color: red;
+  color: #fd395c;
   text-decoration: none !important;
   margin-left: 50;
+  right: 16px;
+  top: 23px;
+  position: absolute;
+  font-size: 20px;
+  border: black;
 }
 
  .price {
@@ -85,4 +93,3 @@
   color: rgb(123, 120, 120);
   font-size: 13px;
  }
-

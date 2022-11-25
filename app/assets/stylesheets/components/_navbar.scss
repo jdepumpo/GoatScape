@@ -32,3 +32,12 @@
 .avatar{
   width: 30px;
 }
+
+.category-select{
+  select {
+    border: none;
+    background-color: transparent;
+    color:#757575;
+    outline:none;
+  }
+}

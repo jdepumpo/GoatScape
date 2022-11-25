@@ -1,0 +1,13 @@
+<% cat = [] %>
+<% goat_categories.each do |category| %>
+  <% cat << category %>
+<% end %>
+
+<%= form_with url: "/goats", method: :get do |form| %>
+  <%= form.label :address, "Location:" %>
+  <%= form.text_field :address %>
+  <%= form.label :category, "Category:" %>
+  <%= form.select :category, cat %>
+  <input placeholder="Select Dates" name="dates" data-flatpickr-target="calendarInput" data-controller="flatpickr" style="border: none; width: 220px;"><i class="fa-regular fa-calendar" style="color: #5d6e5b; font-size: 15px;"></i>
+  <%= form.submit "Search" %>
+<% end %>

@@ -6,4 +6,13 @@ class BookingsController < ApplicationController
     end_date = Date.parse(dates[1])
     @days = (end_date - start_date).to_i
   end
+
+  def create
+    @booking = Booking.new(booking_params)
+    if @goat.save
+      redirect_to booking_path(@booking)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
 end

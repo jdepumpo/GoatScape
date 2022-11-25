@@ -28,7 +28,4 @@ class GoatsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-
-  def search
-  end
 end

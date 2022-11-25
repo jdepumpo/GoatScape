@@ -149,19 +149,15 @@
 
           <h4 class="mb-3">Payment</h4>
 
-          <div class="my-3">
-            <div class="form-check">
-              <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked="" required="">
-              <label class="form-check-label" for="credit">Credit card</label>
-            </div>
-            <div class="form-check">
-              <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required="">
-              <label class="form-check-label" for="debit">Debit card</label>
-            </div>
-            <div class="form-check">
-              <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required="">
-              <label class="form-check-label" for="paypal">PayPal</label>
-            </div>
+
+          <div class="row my-3">
+          <div class="col-12 fs-3">
+            <i class="fa-brands fa-cc-visa"></i>
+            <i class="fa-brands fa-cc-mastercard"></i>
+            <i class="fa-brands fa-cc-jcb"></i>
+            <i class="fa-brands fa-cc-discover"></i>
+            <i class="fa-brands fa-cc-amex"></i>
+          </div>
           </div>
 
           <div class="row gy-3">
@@ -200,11 +196,17 @@
           </div>
 
           <hr class="my-4">
-        <% form_for(:request, :url => requests_path) do |f| %>
+        <%= form_for(@booking, url: goat_bookings_path) do |f| %>
           <div class="actions">
-              <%= f.hidden_field :some_column %>
-              <%= hidden_field_tag 'selected', 'none'  %>
-              <%= f.submit "Book Goat" class: "w-100 btn btn-primary btn-lg"  %>
+              <%= f.hidden_field :user_id %>
+              <%= hidden_field_tag value: current_user.id  %>
+              <%= f.hidden_field :goat_id %>
+              <%= hidden_field_tag value: @goat.id  %>
+              <%= f.hidden_field :start_date %>
+              <%= hidden_field_tag value: @start_date  %>
+              <%= f.hidden_field :end_date %>
+              <%= hidden_field_tag value: @end_date  %>
+              <%= f.submit "Confirm Your Booking", class: "w-100 btn btn-primary btn-lg"  %>
           </div>
         <% end %>
       </div>
